@@ -21,6 +21,12 @@ class AddTodoTableViewController: UITableViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var titleTextfield: UITextField!
     
+    @IBAction func priorityLevelChanged(_ sender: Any) {
+        guard let sender = sender as? UISegmentedControl else {return}
+        let selectedIndex = 2 - sender.selectedSegmentIndex
+        todo.priorityLevel = TodoPriority.allCases[selectedIndex]
+    }
+    
     // MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: Any) {
         delegate?.didAdd(todo: todo)

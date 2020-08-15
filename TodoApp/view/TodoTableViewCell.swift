@@ -20,13 +20,15 @@ class TodoTableViewCell: UITableViewCell {
     // MARK: - Outlets
     @IBOutlet weak var isCompletedIcon: UIImageView!
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var priorityLevelIcon: UIImageView!
     
     /// Configures the cell with a todo
     /// - Parameter todo: todo that will be used to configure the cell
     func configure(todo: Todo)  {
-        let circleIconName = todo.completed ? "checkmark.circle.fill" : "circle"
+        let circleIconName = todo.isCompleted ? "checkmark.circle.fill" : "circle"
         
         isCompletedIcon.image = UIImage(systemName: circleIconName)
+        priorityLevelIcon.image = UIImage(systemName: todo.priorityLevel.icon)
         title.text = todo.title
     }
 }

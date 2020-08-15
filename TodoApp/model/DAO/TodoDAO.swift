@@ -11,7 +11,7 @@ struct TodoDAO {
     typealias ManagedEntity = Todo
     private let context = CoreDataDAO.shared.persistentContainer.viewContext
     
-    /// List all the habits in the database
+    /// List all the habits in the database sorted by the priority  level
     /// - Returns: a list with all elements in database
     func listAll() -> [ManagedEntity] {
         var elements: [ManagedEntity] = []
@@ -22,6 +22,10 @@ struct TodoDAO {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
         
+        // Sorts the list by the higher priority
+        elements.sort {
+            $0.priorityLevel > $1.priorityLevel
+        }
         return elements
     }
     

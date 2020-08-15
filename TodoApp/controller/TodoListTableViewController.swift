@@ -64,7 +64,7 @@ class TodoListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TodoTableViewCell.reuseIdentifer, for: indexPath) as? TodoTableViewCell else {return}
         let item = todoItems[indexPath.row]
-        item.completed.toggle()
+        item.isCompleted.toggle()
         todoDAO.save()
         cell.configure(todo: item)
         tableView.reloadRows(at: [indexPath], with: .automatic)

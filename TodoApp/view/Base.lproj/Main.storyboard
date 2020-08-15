@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -75,6 +76,45 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="0hO-Ss-1Ut">
+                                        <rect key="frame" x="0.0" y="53" width="414" height="84"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0hO-Ss-1Ut" id="Flc-MX-ArZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a0i-45-VVJ">
+                                                    <rect key="frame" x="10" y="10" width="394" height="64"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="Priority level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xa-fV-hvr">
+                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="21.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="s7E-L4-qs1">
+                                                            <rect key="frame" x="0.0" y="31.5" width="394" height="33.5"/>
+                                                            <segments>
+                                                                <segment title="" image="chevron.up" catalog="system"/>
+                                                                <segment title="" image="minus" catalog="system"/>
+                                                                <segment title="" image="chevron.down" catalog="system"/>
+                                                            </segments>
+                                                            <color key="selectedSegmentTintColor" name="AccentColor"/>
+                                                            <connections>
+                                                                <action selector="priorityLevelChanged:" destination="gkn-zU-5zz" eventType="valueChanged" id="QwP-8Y-Qws"/>
+                                                            </connections>
+                                                        </segmentedControl>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="a0i-45-VVJ" secondAttribute="bottom" constant="10" id="7qf-ek-Q3e"/>
+                                                <constraint firstAttribute="trailing" secondItem="a0i-45-VVJ" secondAttribute="trailing" constant="10" id="eki-sr-ydx"/>
+                                                <constraint firstItem="a0i-45-VVJ" firstAttribute="leading" secondItem="Flc-MX-ArZ" secondAttribute="leading" constant="10" id="gd3-38-b2r"/>
+                                                <constraint firstItem="a0i-45-VVJ" firstAttribute="top" secondItem="Flc-MX-ArZ" secondAttribute="top" constant="10" id="tlQ-Sb-fFu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -118,4 +158,12 @@
             <point key="canvasLocation" x="-165.21739130434784" y="8.7053571428571423"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
+        <image name="chevron.up" catalog="system" width="128" height="72"/>
+        <image name="minus" catalog="system" width="128" height="24"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
